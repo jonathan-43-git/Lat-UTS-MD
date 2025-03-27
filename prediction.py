@@ -39,7 +39,7 @@ def main():
     
     df=df.replace(gender_encode)
     cat_subs=df[['Subscription Type']]
-    cat_cont=df[['ContractLength']]
+    cat_cont=df[['Contract Length']]
     cat_enc_subs=pd.DataFrame(oneHot_encode_subs.transform(cat_subs).toarray(),columns=oneHot_encode_subs.get_feature_names_out())
     cat_enc_cont=pd.DataFrame(oneHot_encode_cont.transform(cat_cont).toarray(),columns=oneHot_encode_cont.get_feature_names_out())
     df=pd.concat([df,cat_enc_subs,cat_enc_cont], axis=1)
